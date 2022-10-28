@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Тест</title>
+	<style type="text/css">
+		body {
+			background-image: url("955357.jpg");
+			color: white;
+			text-align: center;
+			font-size: 70px;
+		}
+
+		.div_test {
+			width: 800px;
+			margin:0 auto;
+			background-color: white;
+			/*height: 3000px;*/
+			opacity: .8;
+			border-radius: 20px;
+			color: black;
+			font-size: 20px;
+		}
+	</style>
+	<script type="text/javascript" src="main.js"></script>
+	<script type="text/javascript">
+		function get_res() {
+			let sum = 0;
+  let first = document.getElementsByName("os");
+  let lang = document.getElementsByName("lang");
+  let f4 = document.getElementsByName("qv");
+  for (let i = 0; i < 5; i++) {
+  	if (first[i].checked == true) {
+  		sum = sum + parseInt(first[i].value);
+  		break;
+  	}
+  }
+
+  for (let i = 0; i < 7; i++) {
+  	if (lang[i].checked == true) {
+  		sum = sum + parseInt(lang[i].value);
+  		break;
+  	}
+  }
+
+  for (let i = 0; i < 5; i++) {
+  	if (f4[i].checked == true) sum = sum + parseInt(f4[i].value);
+  }
+  console.log(sum);
+
+
+	if (sum < 1) {
+  	alert("ты норм тип, или пили на js");
+  	return;
+  }
+  if (sum > 15) {
+  	alert("ВЫ ЕБЛАН ОЙ ОЙ КИБЕРПСИХ");
+  	return;
+  }
+  if (sum > 10) {
+  	alert("вЫ почти киберпсих");
+  	return;
+  }
+  if (sum > 7) {
+  	alert("ОПАСНО, вы приближаетесь к киберпсихозу");
+  	return;
+  }
+  if (sum > 4) {
+  	alert("ну ты не оч похож на киберпсиха");
+  	return;
+  }
+
+  alert("БЛЯ ЛОГИКА СЛОМАНА, АВТОР МАКАКА");
+
+}
+	</script>
+</head>
+<body>
+	<div><p>Вас наверное зовут <b id="out_name"></b></p></div>
+
+	<div class="div_test">
+			<hr>
+			<p>Какая у вас ос?</p>
+			<p><input type="radio" value="5" name="os"/>Linux</p>
+			<p><input type="radio" value="1" checked name="os"/>Windows</p>
+			<p><input type="radio" value="3" name="os"/>BSD</p>
+			<p><input type="radio" onclick="ogo()" value="4" name="os"/>DOS</p>
+			<p><input type="radio" onclick="ogo()" value="10" name="os"/>1010101</p>
+			<hr>
+
+			<p>Какой ваш любимый яп?</p>
+			<p><input type="radio" onclick="ogo()" value="10" name="lang"/>C/C++</p>
+			<p><input type="radio" value="2" name="lang"/>ObjectPascal</p>
+			<p><input type="radio" value="1" name="lang"/>C#/.NET</p>
+			<p><input type="radio" value="4" name="lang"/>JS(говно)</p>
+			<p><input type="radio" value="1" name="lang"/>Python</p>
+			<p><input type="radio" onclick="ogo()" value="10" name="lang"/>ASSembler</p>
+			<p><input type="radio" value="1" name="lang"/>другая хуйня</p>
+			<hr>
+
+			<p>Вы считаете:</p>
+			<p><input type="checkbox" value="-4" name="qv"/>Линукс кал как и весь Unix, я GUI царь</p>
+			<p><input type="checkbox" onclick="ogo()" value="5" name="qv"/>Windows это хуйня для домохозяек</p>
+			<p><input type="checkbox" value="-5" name="qv"/>в линуксе нет нормального системного API и ваще..</p>
+			<p><input type="checkbox" onclick="ogo()" value="10" name="qv"/>я считаю что всё должно разрабатыватся ТОЛЬКО нативными средствами а web должен умереть</p>
+			<p><input type="checkbox" onclick="ogo()" value="0" name="qv"/>саня хуй соси</p>
+			<hr>
+
+
+			<button type="submit" onclick="get_res()">Я киберпсих?</button>
+	</div>
+
+	<script type="text/javascript">
+		document.getElementById("out_name").innerHTML = getName4Test();
+	</script>
+</body>
+</html>
